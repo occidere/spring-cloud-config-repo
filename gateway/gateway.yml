@@ -12,16 +12,24 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: review
+          uri: lb://review
+          predicates:
+            - Path=/products/{id}/reviews/**
         - id: product
           uri: lb://product
           predicates:
             - Path=/products/**
+#         - id: product
+#           uri: lb://product
+#           predicates:
+#             - Path=/products/**
 #           filters:
 #             - RewritePath=/product/(?<segment>.*), /$\{segment}
-        - id: review
-          uri: lb://review
-          predicates:
-            - Path=/product/**
+#         - id: review
+#           uri: lb://review
+#           predicates:
+#             - Path=/product/**
 #           filters:
 #             - RewritePath=/review/(?<path>.*), /$\{path}
 
