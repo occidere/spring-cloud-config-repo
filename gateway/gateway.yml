@@ -14,16 +14,16 @@ spring:
       routes:
         - id: product
           uri: lb://product
-          predicates:
-            - Path=/products/**
+#           predicates:
+#             - Path=/products/**
 #           filters:
 #             - RewritePath=/products/(?<segment>.*), /$\{segment}
         - id: review
           uri: lb://review
-          predicates:
-            - Path=/reviews/**
-          filters:
-            - RewritePath=/reviews/(?<path>.*), /$\{path}
+#           predicates:
+#             - Path=/reviews/**
+#           filters:
+#             - RewritePath=/reviews/(?<path>.*), /$\{path}
 
 management:
   endpoints:
