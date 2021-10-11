@@ -21,7 +21,7 @@ spring:
         - id: review
           uri: lb://review
           predicates:
-            - Path=/products/{id}/reviews/**
+            - Path=/**
 #           filters:
 #             - RewritePath=/products/(?<path>.*), /$\{path}
 
