@@ -32,6 +32,10 @@ spring:
 #             - Path=/product/**
 #           filters:
 #             - RewritePath=/review/(?<path>.*), /$\{path}
+        - id: register
+          uri: lb://register
+          predicates:
+            - Path=/register/**
 
 management:
   endpoints:
